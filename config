@@ -1,0 +1,173 @@
+set $mod Mod4
+set $alt Mod1
+
+# Set output alias
+set $benq DVI-D-0
+set $toshiba DVI-I-0
+
+set $browser google-chrome-unstable
+
+font pango:Ubuntu Mono 11
+floating_modifier $mod
+
+# Run terminal
+bindsym $mod+Return exec i3-sensible-terminal
+# Kill focused window
+bindsym $mod+BackSpace kill
+# Quick run
+bindsym $alt+F2 exec j4-dmenu-desktop
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+# Reload config
+bindsym $mod+Shift+c reload
+# Exit i3
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+# Lock screen
+bindsym $alt+Ctrl+l exec i3lock
+
+### Windows navigation ### {
+bindsym $mod+v split v
+bindsym $mod+backslash split h
+bindsym $mod+f fullscreen toggle
+# Float
+bindsym $mod+Shift+space floating toggle
+# Change focus between tiling / floating window
+bindsym $mod+space focus mode_togg
+# Swich focus like a vim
+bindsym $mod+h focus left
+bindsym $mod+Left focus left
+bindsym $mod+j focus down
+bindsym $mod+Down focus down
+bindsym $mod+k focus up
+bindsym $mod+Up focus up
+bindsym $mod+l focus right
+bindsym $mod+Right focus right
+## Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Right move right
+## Change layout
+bindsym $mod+q layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+# Focus the parent containert
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+# Resize
+mode "resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+### }
+
+
+### Workspaces ### {
+# http://fontawesome.io/cheatsheet/
+# Web
+set $web 1:
+workspace $web output $benq
+bindsym $mod+percent workspace $web
+bindsym $mod+Shift+percent move container to workspace $web
+# Term
+set $term 2:
+workspace $term output $benq
+bindsym $mod+asciicircum workspace $term
+bindsym $mod+Shift+asciicircum move container to workspace $term
+# Code
+set $code 3:
+workspace $code output $benq
+bindsym $mod+numbersign workspace $code
+bindsym $mod+Shift+numbersign move container to workspace $code
+# Chat
+set $chat 4:
+workspace $chat output $benq
+bindsym $mod+dollar workspace $chat
+bindsym $mod+Shift+dollar move container to workspace $chat
+# Mail
+set $mail 5:
+workspace $mail output $benq
+bindsym $mod+colon workspace $mail
+bindsym $mod+Shift+colon move container to workspace $mail
+# Music
+set $music 6:
+workspace $music output $toshiba
+bindsym $mod+semicolon workspace $music
+bindsym $mod+Shift+semicolon move container to workspace $music
+# Other
+set $other 7:
+workspace $other output $benq
+bindsym $mod+minus workspace $other
+bindsym $mod+Shift+minus workspace $other
+
+# move workspace to next monitor
+bindsym $mod+y move workspace to output right
+### }
+
+
+# finds out, if available)
+bar {
+  font pango:FontAwesome, Ubuntu Mono 11
+  height 25
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  strip_workspace_numbers yes
+  tray_output primary
+
+  colors {
+    background #000000
+    #statusline #aaaaaa
+    separator #666666
+    focused_workspace  #000000 #000000 #34C2FA
+    active_workspace   #000000 #5f676a #ffffff
+    inactive_workspace #000000 #000000 #888888
+    urgent_workspace   #2f343a #900000 #ffffff
+    binding_mode       #2f343a #900000 #ffffff
+  }
+}
+
+
+# Autostart section
+exec screencloud
+exec thunderbird
+exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
+exec_always killall sbxkb; sbxkb
+
+##### Apps #####
+new_window 1pixel
+
+# Urxvt
+for_window [class="URxvt"] border pixel 1
+# Google Chrome
+for_window [class="google-chrome-unstable"] border pixel 0
+assign [class="google-chrome-unstable"] → $web
+# Gvim
+for_window [class="Gvim"] border pixel 0
+assign [class="Gvim"] → $code
+# Slack
+for_window [class="Slack"] border pixel 0
+assign [class="Slack"] → $chat
+# Smplayer
+for_window [class="smplayer"] border pixel 0
+assign [class="smplayer"] → $other
+# Thunderbird
+assign [class="Thunderbird"] → $mail
+# Clementine
+for_window [class="Clementine"] border pixel 0
+assign [class="Clementine"] → $music
+# Keepassx
+for_window [class="Keepassx2"] floating enable, move scratchpad
+bindsym $mod+t [class="Keepassx2"] scratchpad show
