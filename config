@@ -32,7 +32,7 @@ bindsym $mod+f fullscreen toggle
 # Float
 bindsym $mod+Shift+space floating toggle
 # Change focus between tiling / floating window
-bindsym $mod+space focus mode_togg
+bindsym $mod+space focus mode_toggle
 # Swich focus like a vim
 bindsym $mod+h focus left
 bindsym $mod+Left focus left
@@ -141,6 +141,8 @@ bar {
 
 
 # Autostart section
+exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
+exec compton --vsync opengl-swc --vsync-aggressiv 
 exec screencloud
 exec thunderbird
 exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
