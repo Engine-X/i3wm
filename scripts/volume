@@ -1,0 +1,4 @@
+#!/bin/bash
+
+volume=$(amixer sget Master | awk '/[0-9]+%/ {print $5}' | tr -d "[]" | head -1)
+echo "$volume "
