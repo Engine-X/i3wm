@@ -177,3 +177,6 @@ bindsym $mod+t [class="Keepassx2"] scratchpad show
 # Node as Calc
 for_window [class="^URxvt$" instance="^NodeCalc$"] floating enable
 bindsym $mod+c exec urxvt -name "NodeCalc" -geometry 80x24 -e node
+# Node as Bpython
+for_window [class="^URxvt$" instance="^BpythonCalc$"] floating enable
+bindsym $mod+b exec urxvt -name "BpythonCalc" -geometry 80x24 -e bpython
