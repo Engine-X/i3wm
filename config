@@ -143,6 +143,7 @@ bar {
 # Autostart section
 exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
 exec compton -b --config ~/.config/i3/configs/compton.conf
+exec dropbox
 exec keepassx2
 exec screencloud
 exec thunderbird
