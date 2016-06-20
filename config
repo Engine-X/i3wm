@@ -143,12 +143,12 @@ bar {
 # Autostart section
 exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
 exec compton -b --config ~/.config/i3/configs/compton.conf
-exec dropbox
 exec keepassx2
 exec screencloud
 exec thunderbird
 exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
 exec_always killall sbxkb; sbxkb
+exec dropbox
 
 ##### Apps #####
 new_window 1pixel
