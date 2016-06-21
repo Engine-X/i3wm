@@ -5,6 +5,7 @@
 ```bash
 
 yaourt -S --force \
+          feh \
           j4-dmenu-desktop \
           i3-gaps-next-git \
           i3blocks-gaps-git \
