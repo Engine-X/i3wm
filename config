@@ -146,9 +146,9 @@ exec compton -b --config ~/.config/i3/configs/compton.conf
 exec keepassx2
 exec screencloud
 exec thunderbird
+exec dropbox
 exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
 exec_always killall sbxkb; sbxkb
-exec dropbox
 
 ##### Apps #####
 new_window 1pixel
