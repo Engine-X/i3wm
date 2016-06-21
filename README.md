@@ -5,6 +5,7 @@
 ```bash
 
 yaourt -S --force \
+          feh \
           compton-garnetius-git \
           j4-dmenu-desktop \
           i3-gaps-next-git \
