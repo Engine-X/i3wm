@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Kill focused window
 bindsym $mod+BackSpace kill
 # Quick run
-bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#8A8A8A'" --term=urxvt
+bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#00A6FF'" --term=urxvt
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 # Reload config
