@@ -7,7 +7,7 @@ set $toshiba DVI-I-0
 
 set $browser google-chrome-unstable
 
-font pango:Ubuntu Mono 11
+font pango:Ubuntu Mono derivative Powerline 11
 floating_modifier $mod
 
 # Run terminal
@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Kill focused window
 bindsym $mod+BackSpace kill
 # Quick run
-bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#00A6FF'" --term=urxvt
+bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono derivative Powerline:bold:pixelsize=15' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#00A6FF'" --term=urxvt
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 # Reload config
@@ -121,7 +121,7 @@ bindsym $mod+y move workspace to output right
 
 # finds out, if available)
 bar {
-  font pango:FontAwesome, Ubuntu Mono 11
+  font pango:FontAwesome, Ubuntu Mono derivative Powerline 11
   height 25
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   strip_workspace_numbers yes
