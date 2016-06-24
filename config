@@ -158,6 +158,9 @@ for_window [class="URxvt"] border pixel 1
 # Google Chrome
 for_window [class="google-chrome-unstable"] border pixel 0
 assign [class="google-chrome-unstable"] → $web
+# Yandex Browser
+for_window [class="yandex-browser-beta"] border pixel 0
+assign [class="yandex-browser-beta"] → $web
 # Gvim
 for_window [class="Gvim"] border pixel 0
 assign [class="Gvim"] → $code
