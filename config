@@ -185,3 +185,6 @@ bindsym $mod+c exec urxvt -name "NodeCalc" -geometry 80x24 -e node
 # Node as Bpython
 for_window [class="^URxvt$" instance="^BpythonCalc$"] floating enable
 bindsym $mod+b exec urxvt -name "BpythonCalc" -geometry 80x24 -e bpython
+# Lisp
+for_window [class="^URxvt$" instance="^Lisp$"] floating enable
+bindsym $mod+x exec urxvt -name "Lisp" -geometry 80x24 -e clisp
