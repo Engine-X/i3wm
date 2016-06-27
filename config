@@ -142,7 +142,7 @@ bar {
 
 # Autostart section
 exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
-exec compton -b --config ~/.config/i3/configs/compton.conf
+exec compton -b --backend glx --vsync opengl-swc -cCGfF -o 0.1 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 exec keepassx2
 exec screencloud
 exec thunderbird
