@@ -1,7 +1,7 @@
 ! URxvt !
 URxvt*depth: 32
 URxvt*background:  rgba:0000/0000/0000/eeee
-URxvt.font:        xft:Ubuntu Mono:size=18
+URxvt.font:        xft:Ubuntu Mono derivative Powerline:size=18
 URxvt*geometry:    60x10
 URxvt*scrollBar:   false
 URxvt*scrollColor: #000000
@@ -29,3 +29,5 @@ URxvt.color14:     #34e2e2
 URxvt.color7:      #d3d7cf
 URxvt.color15:     #eeeeec
 URxvt*foreground:  #ffffff
+URxvt.clipboard.autocopy: true
+
