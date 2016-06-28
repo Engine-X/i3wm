@@ -151,10 +151,11 @@ exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
 exec_always killall sbxkb; sbxkb
 
 ##### Apps #####
-new_window 1pixel
+new_window pixel 0
 
 # Urxvt
 for_window [class="URxvt"] border pixel 1
+for_window [class="i3-frame"] border pixel 0
 # Google Chrome
 for_window [class="google-chrome-unstable"] border pixel 0
 assign [class="google-chrome-unstable"] → $web
