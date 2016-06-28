@@ -19,6 +19,10 @@ yaourt -S --force \
 
 git clone https://github.com/Engine-X/i3wm.git ~/.config/i3
 
+
+git clone https://github.com/powerline/fonts ~/fonts
+cd ~/fonts
+./install.sh
+fc-cache -vf /path/to/installed/fonts
+
 ```
-
-
