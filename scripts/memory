@@ -1,3 +1,4 @@
 #!/bin/bash
-memory=$(free -h | grep "Mem" | awk '{print $3"/"$2h " ("int ($3*100/$2)"%)"}')
+mfree=$(free --kilo | awk '/Mem/ {print int($3*100/$2)"%"}')
+memory=$(free -h | grep "Mem" | awk -v mfree=$mfree '{print $3"/"$2" "mfree}')
 echo "$memory "
