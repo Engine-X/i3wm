@@ -11,4 +11,4 @@ CURRENT_STAT=/proc/stat
 
 [[ ! -f "${LAST_STAT}" ]] && < ${CURRENT_STAT} tee ${LAST_STAT}
 
-cat ${LAST_STAT} ${CURRENT_STAT} | awk '/^cpu / {usr=$2-usr; sys=$4-sys; idle=$5-idle; iow=$6-iow} END {total=usr+sys+idle+iow; printf "%.1f%", (total-idle)*100/total}' 
+{ cat ${LAST_STAT} && < ${CURRENT_STAT} tee $LAST_STAT; } | awk '/^cpu / {usr=$2-usr; sys=$4-sys; idle=$5-idle; iow=$6-iow} END {total=usr+sys+idle+iow; printf "%.1f%", (total-idle)*100/total}' 
