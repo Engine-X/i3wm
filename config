@@ -2,12 +2,12 @@ set $mod Mod4
 set $alt Mod1
 
 # Set output alias
-set $benq DVI-D-0
-set $toshiba DVI-I-0
+set $benq LVDS1
+set $toshiba LVDS1
 
-set $browser google-chrome-unstable
+set $browser chromium
 
-font pango:Ubuntu Mono derivative Powerline 11
+font pango:Ubuntu Mono derivative Powerline 13
 floating_modifier $mod
 
 # Run terminal
@@ -121,8 +121,8 @@ bindsym $mod+y move workspace to output right
 
 # finds out, if available)
 bar {
-  font pango:FontAwesome, Ubuntu Mono derivative Powerline 11
-  height 25
+  font pango:FontAwesome, Ubuntu Mono derivative Powerline 13
+  height 27
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   strip_workspace_numbers yes
   tray_output primary
@@ -156,9 +156,9 @@ new_window pixel 0
 # Urxvt
 for_window [class="URxvt"] border pixel 1
 for_window [class="i3-frame"] border pixel 0
-# Google Chrome
-for_window [class="google-chrome-unstable"] border pixel 0
-assign [class="google-chrome-unstable"] → $web
+# Google Chrome | Chromium
+for_window [class="google-chrome-unstable|chromium"] border pixel 0
+assign [class="google-chrome-unstable|chromium"] → $web
 # Yandex Browser
 for_window [class="yandex-browser-beta"] border pixel 0
 assign [class="yandex-browser-beta"] → $web
