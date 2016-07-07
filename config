@@ -15,7 +15,7 @@ bindsym $mod+Return exec urxvt
 # Kill focused window
 bindsym $mod+BackSpace kill
 # Quick run
-bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono derivative Powerline:bold:pixelsize=15' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#00A6FF'" --term=urxvt
+bindsym $alt+F2 exec j4-dmenu-desktop --dmenu="dmenu -i -p 'Arch Linux' -fn 'Ubuntu Mono derivative Powerline:bold:pixelsize=19' -nb '#4D4D4D' -nf '#CCCCCC' -sf '#424242' -sb '#00A6FF'" --term=urxvt
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 # Reload config
@@ -142,7 +142,7 @@ bar {
 
 # Autostart section
 exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
-exec compton -b --config ~/.config/i3/configs/compton.conf
+exec compton -b --vsync opengl-swc -cCGfF -o 0.1 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 exec keepassx2
 exec screencloud
 exec thunderbird
@@ -151,7 +151,7 @@ exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
 exec_always killall sbxkb; sbxkb
 
 ##### Apps #####
-new_window pixel 0
+new_window pixel 1
 
 # Urxvt
 for_window [class="URxvt"] border pixel 1
