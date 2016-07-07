@@ -1,0 +1,10 @@
+#!/bin/bash
+
+BATTERY=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+STATE=$(echo "${BATTERY}" | awk '/state:/ {print $2}')
+PERCENTAGE=$(echo "${BATTERY}" | awk '/percentage:/ {print $2}' | tr -d "%")
+
+if [ "$STATE" == "discharging" -o "${PERCENTAGE}" -lt "99" ]; then
+  echo "${PERCENTAGE}%"
+fi
+  
