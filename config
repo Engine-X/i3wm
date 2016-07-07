@@ -141,14 +141,14 @@ bar {
 
 
 # Autostart section
-exec feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
-exec compton -b --vsync opengl-swc -cCGfF -o 0.1 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
-exec keepassx2
-exec screencloud
-exec thunderbird
-exec dropbox
-exec_always setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
-exec_always killall sbxkb; sbxkb
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallhaven-299643.png
+exec --no-startup-id compton -b --vsync opengl-swc -cCGfF -o 0.1 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+exec --no-startup-id keepassx2
+# exec screencloud
+exec --no-startup-idthunderbird
+exec --no-startup-id dropbox
+exec_always --no-startup-id setxkbmap -layout 'us,ru(diktor)' -option grp:caps_toggle
+exec_always --no-startup-id killall sbxkb; sbxkb
 
 ##### Apps #####
 new_window pixel 1
