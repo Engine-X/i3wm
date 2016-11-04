@@ -18,7 +18,7 @@ yaourt -S --force \
           ttf-font-awesome 
           sbxkb 
 
-git clone https://github.com/Engine-X/i3wm.git ~/.config/i3
+git clone https://github.com/z-engine/i3wm.git ~/.config/i3
 
 ```
 
